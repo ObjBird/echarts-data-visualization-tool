@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f7fa;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.app-header {
+  background: linear-gradient(to right, #409EFF, #79bbff);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  z-index: 10;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.option-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.line-style-preview {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #606266;
+}
+
+.line-style-preview.solid {
+  border-top: 2px solid #606266;
+}
+
+.line-style-preview.dashed {
+  border-top: 2px dashed #606266;
+}
+
+.line-style-preview.dotted {
+  border-top: 2px dotted #606266;
+}
+
+.line-shape-preview {
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+  position: relative;
+}
+
+.line-shape-preview::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #606266;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.line-shape-preview.polyline::before {
+  background: linear-gradient(45deg, #606266 50%, transparent 50%), linear-gradient(-45deg, #606266 50%, transparent 50%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 0;
+}
+
+.line-shape-preview.smooth::before {
+  border-radius: 50%;
+}
+
+.line-shape-preview.step::before {
+  background: linear-gradient(to right, #606266 25%, transparent 25%, transparent 50%, #606266 50%, #606266 75%, transparent 75%);
+  background-size: 12px 2px;
+}
+
+/* 响应式调整 */
+@media (max-width: 900px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    padding: 15px 0;
+  }
+  
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* 优化图表容器样式 */
+.MuiCard-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.MuiCardContent-root {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
