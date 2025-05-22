@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, FormGroup, FormControlLabel, Checkbox, Divider } from '@mui/material';
+import { Box, Typography, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
 
 const DimensionCross = ({ headers, chartType, onCrossDimensionsChanged }) => {
   const [selectedDimensions, setSelectedDimensions] = useState([]);
@@ -20,12 +20,12 @@ const DimensionCross = ({ headers, chartType, onCrossDimensionsChanged }) => {
     onCrossDimensionsChanged(selectedDimensions);
   }, [selectedDimensions, onCrossDimensionsChanged]);
 
-  // 监听图表类型变化
+  // 监听图表类型变化，如果是饼图则清空选择的维度
   useEffect(() => {
     if (chartType === 'pie' && selectedDimensions.length > 0) {
       setSelectedDimensions([]);
     }
-  }, [chartType]);
+  }, [chartType, selectedDimensions.length]);
 
   // 处理复选框变化
   const handleCheckboxChange = (event) => {
