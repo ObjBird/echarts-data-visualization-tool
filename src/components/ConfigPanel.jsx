@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { 
   Card, CardHeader, CardContent, Tabs, Tab, Box, Typography, TextField, Button,
-  FormControl, InputLabel, Select, MenuItem, Alert, Snackbar, Grid, IconButton,
+  FormControl, InputLabel, Select, MenuItem, Alert, Snackbar, Grid,
   Accordion, AccordionSummary, AccordionDetails
 } from '@mui/material';
 import { 
   BarChart as BarChartIcon, 
   Timeline as TimelineIcon, 
   PieChart as PieChartIcon,
-  Code as CodeIcon,
   ContentCopy as ContentCopyIcon,
   ScatterPlot as ScatterPlotIcon,
   Delete as DeleteIcon,
